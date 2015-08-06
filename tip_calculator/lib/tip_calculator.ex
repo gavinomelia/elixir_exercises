@@ -1,0 +1,2 @@
+defmodule TipCalculator do
+end
