@@ -1,4 +1,4 @@
-TipCalculator
-=============
+SayingHello
+===========
 
 ** TODO: Add description **

@@ -1,4 +1,4 @@
-defmodule TipCalculatorTest do
+defmodule SayingHelloTest do
   use ExUnit.Case
 
   test "the truth" do
