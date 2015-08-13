@@ -1,5 +1,22 @@
-noun = IO.gets("Enter a noun: ") |> String.strip
-verb = IO.gets("Enter a verb: ") |> String.strip
-adjective = IO.gets("Enter an adjective: ") |> String.strip
-adverb = IO.gets("Enter an adverb: ") |> String.strip
-IO.puts "You #{verb} your #{adjective} #{noun} #{adverb} on a #{noun}? That hilarious!"
+defmodule MadLib do
+  def verb do
+    IO.gets("Enter a verb: ") |> String.strip
+  end
+
+  def adjective do
+    IO.gets("Enter an adjective: ") |> String.strip
+  end
+
+  def noun do
+    IO.gets("Enter a noun: ") |> String.strip
+  end
+
+  def adverb do
+    IO.gets("Enter an adverb: ") |> String.strip
+  end
+
+  def go do
+    IO.puts "You #{verb} your #{adjective} #{noun} #{adverb} down #{String.capitalize(noun)} Street? That hilarious!"
+  end
+end
+MadLib.go

@@ -1,5 +1,5 @@
-first = IO.gets("What is the first number? ") |> String.strip |> String.to_integer
-second = IO.gets("What is the second number? ") |> String.strip |> String.to_integer
+{first, _} = IO.gets("What is the first number? ") |> String.strip |> Float.parse
+{second, _} = IO.gets("What is the second number? ") |> String.strip |> Float.parse
 added = first + second
 subtracted = first - second
 multiplied = first * second
