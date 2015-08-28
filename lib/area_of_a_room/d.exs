@@ -15,6 +15,16 @@ defmodule AreaOfARoom do
     end
   end
 
+  def feet_and_meters(first, second) do
+    feet_dimension = first * @to_feet_formula
+    first_area = second * feet_dimension
+    meter_area = first_area * @to_meters_formula
+    first_string_area = first_area |> Float.to_string [decimals: 3, compact: true]
+    IO.puts "You entered dimensions of #{second} feet by #{first} meters."
+    IO.puts "The area of the room is #{first_string_area} square feet."
+    IO.puts "#{meter_area} square meters"
+  end
+
   def go do
     { length, measurement } = retrieve("length")
     first_measurement = measurement
@@ -45,22 +55,10 @@ defmodule AreaOfARoom do
         IO.puts "The area of the room is #{string_area} square meters."
         IO.puts "#{area_feet} square feet"
       ["feet", "meters"] ->
-        feet_width = width * @to_feet_formula
-        first_area = length * feet_width
-        meter_area = first_area * @to_meters_formula
-        first_string_area = first_area |> Float.to_string [decimals: 3, compact: true]
-        IO.puts "You entered dimensions of #{length} feet by #{width} meters."
-        IO.puts "The area of the room is #{first_string_area} square feet."
-        IO.puts "#{meter_area} square meters"
-      ["meters", "feet"] ->
-        feet_length = length * @to_feet_formula
-        second_area = width * feet_length
-        meter_area = second_area * @to_meters_formula
-        second_string_area = second_area |> Float.to_string [decimals: 3, compact: true]
-        IO.puts "You entered dimensions of #{length} meters by #{width} feet."
-        IO.puts "The area of the room is #{second_string_area} square feet."
-        IO.puts "#{meter_area} square meters"
+        feet_and_meters(width, length)
+        ["meters", "feet"] ->
+        feet_and_meters(length, width)
     end
   end
 end
-  AreaOfARoom.go
+AreaOfARoom.go
