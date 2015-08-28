@@ -11,7 +11,16 @@ defmodule AreaOfARoom do
       { amount, _ } when amount < 0 ->
         IO.puts "Negative numbers are not allowed. Try again."
         retrieve(dimension)
-      { amount, measurement } -> { amount, measurement }
+      { amount, measurement } ->
+        case measurement do
+          "ft" ->
+            { amount, measurement }
+          "m" ->
+            { amount, measurement }
+          _ ->
+            IO.puts "You must enter either ft or m at the end of your number. Try again."
+            retrieve(dimension)
+        end 
     end
   end
 
@@ -63,4 +72,4 @@ defmodule AreaOfARoom do
     end
   end
 end
-  AreaOfARoom.go
+AreaOfARoom.go
