@@ -52,25 +52,15 @@ defmodule AreaOfARoom do
     second_measurement = measurement
     area = length * width
     string_area = area |> Float.to_string [decimals: 3, compact: true]
-    if first_measurement == "ft" do
-      first = "feet"
-    else
-      first = "meters"
-    end
-    if second_measurement == "ft" do
-      second = "feet"
-    else
-      second = "meters"
-    end
 
-    case [first, second] do
-      ["feet", "feet"] ->
+    case [first_measurement, second_measurement] do
+      ["ft", "ft"] ->
         feet_or_meters(length, width, string_area, area, "ft")
-      ["meters", "meters"] ->
+      ["m", "m"] ->
         feet_or_meters(length, width, string_area, area, "m")
-      ["feet", "meters"] ->
+      ["ft", "m"] ->
         feet_and_meters(width, length, string_area)
-      ["meters", "feet"] ->
+      ["m", "ft"] ->
         feet_and_meters(length, width, string_area)
     end
   end
