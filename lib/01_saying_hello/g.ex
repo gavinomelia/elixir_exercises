@@ -1,6 +1,6 @@
-defmodule SayingHello do
+defmodule SayingHello.G do
   defp input do
-    IO.gets("What is you name? ") |> String.strip
+    IO.gets("What is your name? ") |> String.strip
   end
 
   defp response("Gavin"), do: "Hello, Gavin, you are totaly awesome!"
@@ -11,4 +11,3 @@ defmodule SayingHello do
    IO.puts(input |> response)
   end
 end
-SayingHello.go

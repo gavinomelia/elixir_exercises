@@ -1,4 +1,4 @@
-defmodule SayingHello do
+defmodule SayingHello.D do
   def input do
     IO.gets("What is you name? ") |> String.strip
   end
@@ -12,4 +12,3 @@ defmodule SayingHello do
     end
   end
 end
-SayingHello.go

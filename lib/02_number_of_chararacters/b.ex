@@ -1,4 +1,4 @@
-defmodule NumberOfCharacters do
+defmodule NumberOfCharacters.B do
   def input do
     IO.gets("What is the input string? ") |> String.strip
   end
@@ -13,4 +13,4 @@ defmodule NumberOfCharacters do
     end
   end
 end
-NumberOfCharacters.go
+NumberOfCharacters.B.go

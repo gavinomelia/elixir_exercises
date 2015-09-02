@@ -1,4 +1,4 @@
-defmodule AreaOfARoom do
+defmodule AreaOfARoomA do
 length = IO.gets("What is the length of the room in feet? ") |> String.strip |> String.to_integer
 width = IO.gets("What is the width of the room in feet? ") |> String.strip |> String.to_integer
 area = length * width

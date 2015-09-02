@@ -1,8 +1,8 @@
-defmodule AreaOfARoom do
+defmodule AreaOfARoomB do
   @formula 0.09290304
 
     def retrieve(dimension) do
-    number = IO.gets("What is the #{dimension} of the rectangle? ") |> String.strip
+    number = IO.gets("What is the #{dimension} of the room in feet? ") |> String.strip
     case number |> Float.parse  do
       :error ->
         IO.puts "You did not enter a valid number"

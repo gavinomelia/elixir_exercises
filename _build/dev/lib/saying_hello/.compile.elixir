@@ -1,0 +1,7 @@
+/Users/gavin/code/elixir_exercises/_build/dev/lib/saying_hello/ebin/Elixir.AreaOfARoom.D.beam	Elixir.AreaOfARoom.D	lib/07_area_of_a_room/d.ex	Elixir.Float	Elixir.IO	Elixir.Kernel	Elixir.Module	Elixir.String	Elixir.String.Chars	erlang	Elixir
+/Users/gavin/code/elixir_exercises/_build/dev/lib/saying_hello/ebin/Elixir.NumberOfCharacters.B.beam	Elixir.NumberOfCharacters.B	lib/02_number_of_chararacters/b.ex	Elixir.IO	Elixir.Kernel	Elixir.String	Elixir.String.Chars	erlang	Elixir
+/Users/gavin/code/elixir_exercises/_build/dev/lib/saying_hello/ebin/Elixir.AreaOfARoom.C.beam	Elixir.AreaOfARoom.C	lib/07_area_of_a_room/c.ex	Elixir.Float	Elixir.IO	Elixir.Kernel	Elixir.Module	Elixir.String	Elixir.String.Chars	erlang	Elixir
+_build/dev/lib/saying_hello/ebin/Elixir.SayingHello.D.beam	Elixir.SayingHello.D	lib/01_saying_hello/d.ex	Elixir.IO	Elixir.Kernel	Elixir.String	Elixir.String.Chars	Elixir
+_build/dev/lib/saying_hello/ebin/Elixir.SayingHello.E.beam	Elixir.SayingHello.E	lib/01_saying_hello/e.ex	Elixir.IO	Elixir.Kernel	Elixir.String	Elixir.String.Chars	Elixir
+_build/dev/lib/saying_hello/ebin/Elixir.SayingHello.F.beam	Elixir.SayingHello.F	lib/01_saying_hello/f.ex	Elixir.IO	Elixir.Kernel	Elixir.String	Elixir.String.Chars	Elixir
+_build/dev/lib/saying_hello/ebin/Elixir.SayingHello.G.beam	Elixir.SayingHello.G	lib/01_saying_hello/g.ex	Elixir.IO	Elixir.Kernel	Elixir.String	Elixir.String.Chars	Elixir
