@@ -1,5 +1,6 @@
 defmodule AreaOfARoom.C do
-  @to_meters_formula 0.09290304
+  @to_sqmeters_formula 0.09290304
+  @to_sqfeet_formula 10.7639
   @to_feet_formula 3.28084
 
   def retrieve(dimension) do
@@ -31,40 +32,30 @@ defmodule AreaOfARoom.C do
     second_measurement = measurement
     area = length * width
     string_area = area |> Float.to_string [decimals: 3, compact: true]
-    if first_measurement == "ft" do
-      first = "feet"
-    else
-      first = "meters"
-    end
-    if second_measurement == "ft" do
-      second = "feet"
-    else
-      second = "meters"
-    end
 
-    case [first, second] do
-      ["feet", "feet"] ->
-        area_meters = area * @to_meters_formula |> Float.to_string [decimals: 3, compact: true]
+    case [first_measurement, second_measurement] do
+      ["ft", "ft"] ->
+        area_meters = area * @to_sqmeters_formula |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} feet by #{width} feet."
         IO.puts "The area of the room is #{string_area} square feet."
         IO.puts "#{area_meters} square meters"
-      ["meters", "meters"] ->
-        area_feet = area * @to_feet_formula |> Float.to_string [decimals: 3, compact: true]
+      ["m", "m"] ->
+        area_feet = area * @to_sqfeet_formula |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} meters by #{width} meters."
         IO.puts "The area of the room is #{string_area} square meters."
         IO.puts "#{area_feet} square feet"
-      ["feet", "meters"] ->
+      ["ft", "m"] ->
         feet_width = width * @to_feet_formula
         first_area = length * feet_width
-        meter_area = first_area * @to_meters_formula
+        meter_area = first_area * @to_sqmeters_formula
         first_string_area = first_area |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} feet by #{width} meters."
         IO.puts "The area of the room is #{first_string_area} square feet."
-        IO.puts "#{meter_area} square meters"
-      ["meters", "feet"] ->
+        IO.puts "#{meter_area |> Float.to_string [decimals: 3, compact: true]} square meters"
+      ["m", "ft"] ->
         feet_length = length * @to_feet_formula
         second_area = width * feet_length
-        meter_area = second_area * @to_meters_formula
+        meter_area = second_area * @to_sqmeters_formula
         second_string_area = second_area |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} meters by #{width} feet."
         IO.puts "The area of the room is #{second_string_area} square feet."
