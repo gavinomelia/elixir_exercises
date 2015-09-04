@@ -7,7 +7,7 @@ defmodule AreaOfARoom.D.Test do
   end
 
   test "meters by meters" do
-    assert_area(["10m", "10m"], "The area of the room is 100.0 square meters.\n1076.39 square feet")
+    assert_area(["10m", "10m"], "The area of the room is 1076.391 square feet.\n100.0 square meters")
   end
 
   test "meters by feet" do
@@ -23,11 +23,11 @@ defmodule AreaOfARoom.D.Test do
   end
 
   test "negative numbers" do
-    assert_area(["-8", "-15", "10m", "8m"], "No negatives allowed.")
+    assert_area(["-8m", "-15ft", "10m", "8m"], "No negatives allowed.")
   end
 
   defp assert_area(list_of_strings, output) do
-    assert String.contains?(captured(Enum.join(list_of_strings, "\n")), output)
+     assert String.contains?(captured(Enum.join(list_of_strings, "\n")), output)
   end
 
   defp captured(input) do
