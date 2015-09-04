@@ -1,5 +1,6 @@
 defmodule AreaOfARoom.D do
-  @to_meters_formula 0.09290304
+  @to_sqmeters_formula 0.09290304
+  @to_sqfeet_formula 10.7639
   @to_feet_formula 3.28084
 
   def retrieve(dimension) do
@@ -28,7 +29,7 @@ defmodule AreaOfARoom.D do
     feet = first * @to_feet_formula
     first_area = second * feet
     string_area = first_area |> Float.to_string [decimals: 3, compact: true]
-    meter_area = first_area * @to_meters_formula
+    meter_area = first_area * @to_sqmeters_formula
     IO.puts "You entered dimensions of #{second} feet by #{first} meters."
     IO.puts "The area of the room is #{string_area} square feet."
     IO.puts "#{meter_area} square meters"
@@ -36,9 +37,9 @@ defmodule AreaOfARoom.D do
 
   def feet_or_meters(length, width, string_area, area, measurement) do
     if measurement == "m" do
-      formula = @to_feet_formula
+      formula = @to_sqfeet_formula
     else
-      formula = @to_meters_formula
+      formula = @to_sqmeters_formula
     end
     area_measuremet = area * formula |> Float.to_string [decimals: 3, compact: true]
     IO.puts "You entered dimensions of #{length} feet by #{width} feet."

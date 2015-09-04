@@ -47,15 +47,15 @@ defmodule AreaOfARoom.C do
       ["ft", "m"] ->
         feet_width = width * @to_feet_formula
         first_area = length * feet_width
-        meter_area = first_area * @to_sqmeters_formula
+        meter_area = first_area * @to_sqmeters_formula |> Float.to_string [decimals: 3, compact: true]
         first_string_area = first_area |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} feet by #{width} meters."
         IO.puts "The area of the room is #{first_string_area} square feet."
-        IO.puts "#{meter_area |> Float.to_string [decimals: 3, compact: true]} square meters"
+        IO.puts "#{meter_area} square meters"
       ["m", "ft"] ->
         feet_length = length * @to_feet_formula
         second_area = width * feet_length
-        meter_area = second_area * @to_sqmeters_formula
+        meter_area = second_area * @to_sqmeters_formula |> Float.to_string [decimals: 3, compact: true]
         second_string_area = second_area |> Float.to_string [decimals: 3, compact: true]
         IO.puts "You entered dimensions of #{length} meters by #{width} feet."
         IO.puts "The area of the room is #{second_string_area} square feet."

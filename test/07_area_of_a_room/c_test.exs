@@ -3,33 +3,31 @@ defmodule AreaOfARoom.C.Test do
   import ExUnit.CaptureIO
 
   test "feet by feet" do
-    result = captured("10ft\n10ft")
-    assert String.contains?(result, "The area of the room is 100.0 square feet.\n9.29 square meters")
+    assert_area(["10ft", "10ft"], "The area of the room is 100.0 square feet.\n9.29 square meters")
   end
 
   test "meters by meters" do
-    result = captured("10m\n10m")
-    assert String.contains?(result, "The area of the room is 100.0 square meters.\n1076.39 square feet")
+    assert_area(["10m", "10m"], "The area of the room is 100.0 square meters.\n1076.39 square feet")
   end
 
   test "meters by feet" do
-    result = captured("10m\n123ft")
-    assert String.contains?(result, "The area of the room is 4035.433 square feet.\n374.90401199692803 square meters")
+    assert_area(["10m", "123ft"], "The area of the room is 4035.433 square feet.\n374.904 square meters")
   end
 
   test "feet by meters" do
-    result = captured("123.123ft\n555m")
-    assert String.contains?(result, "The area of the room is 224190.509 square feet.\n20827.98 square meters")
+    assert_area(["123.123ft", "555m"], "The area of the room is 224190.509 square feet.\n20827.98 square meters")
   end
 
   test "must be a number" do
-    result = captured("abcm\nbobm\n10m\n8m")
-    assert String.contains?(result, "Please enter a valid amount.")
+   assert_area(["abcm", "bobm", "10m", "8m"], "Please enter a valid amount.")
   end
 
   test "negative numbers" do
-    result = captured("-8\n-15\n10m\n8m")
-    assert String.contains?(result, "No negatives allowed.")
+    assert_area(["-8", "-15", "10m", "8m"], "No negatives allowed.")
+  end
+
+  defp assert_area(list_of_strings, output) do
+    assert String.contains?(captured(Enum.join(list_of_strings, "\n")), output)
   end
 
   defp captured(input) do
