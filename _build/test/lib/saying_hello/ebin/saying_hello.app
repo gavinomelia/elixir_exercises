@@ -4,6 +4,7 @@
               {applications,[kernel,stdlib,elixir,logger]},
               {vsn,"0.0.1"},
               {modules,['Elixir.AreaOfARoom.C','Elixir.AreaOfARoom.D',
-                        'Elixir.NumberOfCharacters.B','Elixir.SayingHello.D',
-                        'Elixir.SayingHello.E','Elixir.SayingHello.F',
-                        'Elixir.SayingHello.G']}]}.
+                        'Elixir.AreaOfARoom.E','Elixir.NumberOfCharacters.B',
+                        'Elixir.PizzaParty.A','Elixir.PizzaParty.B',
+                        'Elixir.SayingHello.D','Elixir.SayingHello.E',
+                        'Elixir.SayingHello.F','Elixir.SayingHello.G']}]}.
