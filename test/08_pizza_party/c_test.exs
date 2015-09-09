@@ -1,4 +1,4 @@
-defmodule PizzaParty.A.Test do
+defmodule PizzaParty.C.Test do
   use ExUnit.Case, async: true
   import ExUnit.CaptureIO
 
@@ -19,7 +19,11 @@ defmodule PizzaParty.A.Test do
   end
 
   test "100 and 20" do
-    assert_output(["100", "20"], "Each person gets 1 pieces of pizza.\nThere are 60.0 leftover pieces.")
+    assert_output(["100", "20"], "Each person gets 1 piece of pizza.\nThere are 60.0 leftover pieces.")
+  end
+
+  test "7 and 1" do
+    assert_output(["7", "1"], "Each person gets 1 piece of pizza.\nThere is 1.0 leftover piece.")
   end
 
   defp assert_output(list_of_strings, output) do
@@ -27,7 +31,7 @@ defmodule PizzaParty.A.Test do
   end
 
   defp captured(input) do
-    capture_io([input: input, capture_prompt: false], &PizzaParty.A.go/0) |> String.strip
+    capture_io([input: input, capture_prompt: false], &PizzaParty.C.go/0) |> String.strip
   end
 
 end
