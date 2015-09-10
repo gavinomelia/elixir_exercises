@@ -18,7 +18,7 @@ defmodule PizzaParty.B do
     pizzas = retrieve("How many pizzas do you have? ") |> round
     total_slices = pizzas * 8
     pizza_per_person = div(total_slices, people)
-    leftover_pieces = rem(total_slices, people * pizza_per_person)
+    leftover_pieces = rem(total_slices, people)
     IO.puts """
     #{people} people with #{pizzas} pizzas
     Each person gets #{pizza_per_person} pieces of pizza.

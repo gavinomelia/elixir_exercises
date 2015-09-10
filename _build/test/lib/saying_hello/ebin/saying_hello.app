@@ -5,7 +5,8 @@
               {vsn,"0.0.1"},
               {modules,['Elixir.AreaOfARoom.C','Elixir.AreaOfARoom.D',
                         'Elixir.AreaOfARoom.E','Elixir.NumberOfCharacters.B',
-                        'Elixir.PizzaParty.A','Elixir.PizzaParty.B',
-                        'Elixir.PizzaParty.C','Elixir.PizzaParty.D',
+                        'Elixir.PaintCalculator.A','Elixir.PizzaParty.A',
+                        'Elixir.PizzaParty.B','Elixir.PizzaParty.C',
+                        'Elixir.PizzaParty.D','Elixir.PizzaParty.E',
                         'Elixir.SayingHello.D','Elixir.SayingHello.E',
                         'Elixir.SayingHello.F','Elixir.SayingHello.G']}]}.

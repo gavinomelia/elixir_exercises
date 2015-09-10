@@ -17,6 +17,7 @@ defmodule PizzaParty.D do
     people = retrieve("How many people? ")
     pieces_per_person = retrieve("How many pieces does each person want? ")
     pizzas_needed = pieces_per_person * people / 8 |> Float.ceil |> trunc
-    IO.puts "You need to buy #{pizzas_needed} pizzas."
+    leftover_pieces = pizzas_needed * 8 - pieces_per_person * people
+    IO.puts "You need to buy #{pizzas_needed} pizzas. When you do there will be #{leftover_pieces} leftover pieces."
   end
 end

@@ -11,15 +11,15 @@ defmodule PizzaParty.D.Test do
   end
 
   test "900 and 3" do
-    assert_output(["900", "3"], "You need to buy 338 pizzas.")
+    assert_output(["900", "3"], "You need to buy 338 pizzas. When you do there will be 4.0 leftover pieces.")
   end
 
   test "24 and 1" do
-    assert_output(["24", "1"], "You need to buy 3 pizzas.")
+    assert_output(["24", "1"], "You need to buy 3 pizzas. When you do there will be 0.0 leftover pieces.")
   end
 
   test "100 and 20" do
-    assert_output(["100", "20"], "You need to buy 250 pizzas.")
+    assert_output(["100", "20"], "You need to buy 250 pizzas. When you do there will be 0.0 leftover pieces.")
   end
 
   defp assert_output(list_of_strings, output) do
