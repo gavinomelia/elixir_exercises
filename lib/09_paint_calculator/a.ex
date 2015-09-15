@@ -15,12 +15,10 @@ defmodule PaintCalculator.A do
   end
 
   def go do
-    length = retrieve("Enter the length ") |> round
-    width = retrieve("Enter the width ") |> round
+    length = retrieve("Enter the length: ") |> round
+    width = retrieve("Enter the width: ") |> round
     room_sq_ft = length * width
     gallons_needed = room_sq_ft / @gallon_to_sq_ft |> Float.ceil
-    IO.puts """
-    You will need to purchase #{gallons_needed} gallons of paint to cover #{room_sq_ft} square feet.
-    """
+    IO.puts "You will need to purchase #{gallons_needed |> trunc} gallons of paint to cover #{room_sq_ft} square feet."
   end
 end

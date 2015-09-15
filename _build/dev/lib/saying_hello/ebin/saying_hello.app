@@ -6,6 +6,7 @@
               {modules,['Elixir.AreaOfARoom.C','Elixir.AreaOfARoom.D',
                         'Elixir.AreaOfARoom.E','Elixir.NumberOfCharacters.B',
                         'Elixir.PaintCalculator.A','Elixir.PaintCalculator.B',
+                        'Elixir.PaintCalculator.C','Elixir.PaintCalculator.D',
                         'Elixir.PizzaParty.A','Elixir.PizzaParty.B',
                         'Elixir.PizzaParty.C','Elixir.PizzaParty.D',
                         'Elixir.PizzaParty.E','Elixir.SayingHello.D',
