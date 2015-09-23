@@ -11,4 +11,5 @@
                         'Elixir.PizzaParty.C','Elixir.PizzaParty.D',
                         'Elixir.PizzaParty.E','Elixir.SayingHello.D',
                         'Elixir.SayingHello.E','Elixir.SayingHello.F',
-                        'Elixir.SayingHello.G']}]}.
+                        'Elixir.SayingHello.G','Elixir.SelfCheckout.A',
+                        'Elixir.SelfCheckout.B']}]}.
