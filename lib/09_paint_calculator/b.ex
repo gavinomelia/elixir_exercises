@@ -1,18 +1,7 @@
 defmodule PaintCalculator.B do
   @gallon_to_sq_ft 350
 
-  def retrieve(prompt) do
-    number = IO.gets(prompt) |> String.strip
-    case number |> Float.parse  do
-      :error ->
-        IO.puts "Please enter a valid amount."
-        retrieve(prompt)
-      { amount, _ } when amount < 0 ->
-        IO.puts "No negatives allowed."
-        retrieve(prompt)
-      { amount, _ } -> amount
-    end
-  end
+  import InputRetriever
 
   def go do
     radius = retrieve("Enter the radius of the circle: ") |> round

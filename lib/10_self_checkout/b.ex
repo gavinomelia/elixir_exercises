@@ -1,17 +1,6 @@
 defmodule SelfCheckout.B do
 
-  def retrieve(prompt) do
-    number = IO.gets(prompt) |> String.strip
-    case number |> Float.parse  do
-      :error ->
-        IO.puts "Please enter a valid amount."
-        retrieve(prompt)
-      { amount, _ } when amount < 0 ->
-        IO.puts "No negatives allowed."
-        retrieve(prompt)
-      { amount, _ } -> amount
-    end
-  end
+  import InputRetriever
 
   def price_quantity do
     price = retrieve("Enter the price of the item: ")
