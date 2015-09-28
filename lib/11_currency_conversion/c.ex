@@ -6,7 +6,7 @@ defmodule CurrencyConversion.C do
   end
 
   def go do
-    currency = IO.gets("What is the abbreviation of the currency you want to exchange? ") |> String.strip
+    currency = IO.gets("What is the abbreviation of the currency you want to exchange? ") |> String.strip |> String.upcase
     euros = retrieve("How many #{currency} are you exchanging? ")
     case HTTPoison.get("https://openexchangerates.org/api/latest.json?app_id=0ce02c1806464a499c4705c8bf785be1") do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
