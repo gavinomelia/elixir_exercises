@@ -1,7 +1,7 @@
 {application,saying_hello,
              [{registered,[]},
               {description,"saying_hello"},
-              {applications,[kernel,stdlib,elixir,logger]},
+              {applications,[kernel,stdlib,elixir,logger,httpoison]},
               {vsn,"0.0.1"},
               {modules,['Elixir.AreaOfARoom.C','Elixir.AreaOfARoom.D',
                         'Elixir.AreaOfARoom.E','Elixir.CurrencyConversion.A',
