@@ -12,10 +12,9 @@ defmodule SimpleInterest.C do
   def go do
     principal = retrieve("Enter the principal: ")
     interest = retrieve("Enter the rate of interest: ")
-    years = retrieve("Enter the number of years: ")
-    year_range = Range.new(1, years |> trunc)
-    year = Enum.reduce(year_range, fn(num, acc) -> num end)
-
-    IO.puts "\nAfter #{years} years at #{interest}%, the investment will be worth $#{calculate_simple_interest(principal, interest, year) |> compact}."
+    years = retrieve("Enter the number of years: ") |> trunc
+    Enum.reduce(1..years, 0, fn(year, acc) -> (
+      IO.puts "\nAfter #{year} year/s at #{interest}%, the investment will be worth $#{calculate_simple_interest(principal, interest, year) |> compact}.")
+    end)
   end
 end
