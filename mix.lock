@@ -1,4 +1,5 @@
-%{"hackney": {:hex, :hackney, "1.3.2"},
+%{"comeonin": {:hex, :comeonin, "1.2.2"},
+  "hackney": {:hex, :hackney, "1.3.2"},
   "httpoison": {:hex, :httpoison, "0.7.4"},
   "idna": {:hex, :idna, "1.0.2"},
   "poison": {:hex, :poison, "1.5.0"},

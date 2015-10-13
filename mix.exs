@@ -14,7 +14,7 @@ defmodule SayingHello.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger, :httpoison, :poison]]
+    [applications: [:logger, :httpoison, :poison, :comeonin]]
   end
 
   # Dependencies can be Hex packages:
@@ -29,7 +29,8 @@ defmodule SayingHello.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.7.2"},
-      {:poison, "~> 1.5"}
+      {:poison, "~> 1.5"},
+      {:comeonin, "~> 1.2"}
     ]
   end
 end

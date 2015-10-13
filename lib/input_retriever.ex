@@ -11,4 +11,4 @@ defmodule InputRetriever do
       { amount, _ } -> amount
     end
   end
-end
+  end
