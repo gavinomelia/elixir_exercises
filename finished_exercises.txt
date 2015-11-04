@@ -1,0 +1,25 @@
+Done exercises:
+00_tip_calculator
+01_saying_hello
+02_number_of_chararacters
+03_printing_quotes
+04_mad_lib
+05_simple_math
+06_retirement_calculator
+07_area_of_a_room
+08_pizza_party
+09_paint_calculator
+10_self_checkout
+11_currency_conversion
+12_simple_interest
+13_compound_interest
+14_tax_calculator
+15_password_validation
+16_legal_driving_age
+
+To be compared:
+17_blood_alcohol_calculator
+18_temperature_converter
+
+In progress:
+19_bmi_calculator
