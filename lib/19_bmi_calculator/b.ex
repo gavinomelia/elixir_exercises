@@ -1,8 +1,9 @@
-defmodule BMICalculator.A do
+defmodule BMICalculator.B do
   import InputRetriever
   def go do
+    units = "Would you like to use Metric or Imperial units? "
     weight = retrieve("What is your weight? ")
-    height = retrieve("What is your height in inches? ")
+    height = retrieve("What is your height? ")
     bmi = (weight / (height * height)) * 703
     IO.puts "Your BMI is #{bmi}"
     min .. max = 18.5..25.0
