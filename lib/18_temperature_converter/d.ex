@@ -1,4 +1,4 @@
-defmodule TemperatureConverter.B do
+defmodule TemperatureConverter.D do
   import InputRetriever
   def go do
     from_unit = IO.gets("Enter C for Celcius or F for Fahrenheit: ") |> String.strip |> String.upcase
