@@ -1,4 +1,4 @@
-defmodule SelfCheckout.B do
+  defmodule SelfCheckout.B do
 
   import InputRetriever
 
@@ -10,6 +10,7 @@ defmodule SelfCheckout.B do
 
   defp retrieve_line_items(acc \\ []) do
     the_num = price_quantity
+    IO.inspect the_num
     if the_num == {0, 0} do
       acc |> Enum.reverse
     else

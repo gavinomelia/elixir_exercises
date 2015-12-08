@@ -5,23 +5,36 @@ defmodule InputRetriever do
       :error ->
         IO.puts "Please enter a valid amount."
         retrieve(prompt)
-      { amount, _ } when amount < 0 ->
-        IO.puts "No negatives allowed."
-        retrieve(prompt)
-      { amount, _ } -> amount
-    end
-  end
+        { amount, _ } when amount < 0 ->
+          IO.puts "No negatives allowed."
+          retrieve(prompt)
+          { amount, _ } -> amount
+        end
+      end
 
-  def retrieve_with_unit(prompt) do
-    number = IO.gets(prompt) |> String.strip
-    case number |> Float.parse  do
-      :error ->
-        IO.puts "Please enter a valid amount."
-        retrieve(prompt)
-      { amount, _ } when amount < 0 ->
-        IO.puts "No negatives allowed."
-        retrieve(prompt)
-      { amount, unit } -> { amount, unit }
-    end
-  end
-  end
+      def retrieve_with_unit(prompt) do
+        number = IO.gets(prompt) |> String.strip
+        case number |> Float.parse  do
+          :error ->
+            IO.puts "Please enter a valid amount."
+            retrieve(prompt)
+            { amount, _ } when amount < 0 ->
+              IO.puts "No negatives allowed."
+              retrieve(prompt)
+              { amount, unit } -> { amount, unit }
+            end
+          end
+
+          def retrieve_string(prompt, upcase) do
+            the_string = IO.gets(prompt) |> String.strip
+            if upcase == true, do: the_string |> String.upcase
+            case the_string |> String.valid? do
+              false ->
+                IO.puts "Please enter a valid string."
+                retrieve_string(prompt, upcase)
+                true ->
+                  the_string
+                end
+              end
+
+            end
