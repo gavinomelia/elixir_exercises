@@ -1,8 +1,8 @@
 defmodule TemperatureConverter.A do
   import InputRetriever
   def go do
-    temp_unit = IO.gets("Enter C for Celcius or F for Fahrenheit: ") |> String.strip |> String.upcase
-    case temp_unit do
+    from_unit = retrieve_string("Enter C for Celcius or F for Fahrenheit: ") |> String.upcase
+    case from_unit do
       "F" ->
         temp_f = retrieve("Enter the temp in Fahrenheit: ")
         celcius_temp = (temp_f - 32) * (5/9) |> Float.round(2)

@@ -25,13 +25,12 @@ defmodule InputRetriever do
             end
           end
 
-          def retrieve_string(prompt, upcase) do
+          def retrieve_string(prompt) do
             the_string = IO.gets(prompt) |> String.strip
-            if upcase == true, do: the_string |> String.upcase
             case the_string |> String.valid? do
               false ->
                 IO.puts "Please enter a valid string."
-                retrieve_string(prompt, upcase)
+                retrieve_string(prompt)
                 true ->
                   the_string
                 end
