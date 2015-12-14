@@ -1,27 +1,20 @@
 defmodule TemperatureConverter.D do
   import InputRetriever
+
+  def from_to_converter("F") do
+    { "Fahrenheit", "Celcius", fn(temp) -> (temp - 32) * (5/9) end }
+  end
+
+  def from_to_converter("C") do
+    { "Celcius", "Fahrenheit", fn(temp) -> (temp * (9/5)) + 32 end }
+  end
+
   def go do
-    from_unit = IO.gets("Enter C for Celcius or F for Fahrenheit: ") |> String.strip |> String.upcase
-    output(from_unit)
+    IO.puts "Would you like to convert from C (eslcius) or F (ahrenheit)"
+    convert_from = retrieve_string("Your choice: ", ~w[C c F f])
+    { from, to, converter } = from_to_converter(convert_from)
+    temp = retrieve("Please enter the temperature in #{from}: ")
+    IO.puts "The temperature in #{to} is #{converter.(temp) |> Float.round(2)} degrees."
   end
 
-  def output("C") do
-    temp = retrieve("Enter the temp in Celcius: ")
-    new_temp = calculate(temp, "C")
-    IO.puts "The temp in Fahrenheit is #{new_temp}"
-  end
-
-  def output("F") do
-    temp = retrieve("Enter the temp in Fahrenheit: ")
-    new_temp = calculate(temp, "F")
-    IO.puts "The temp in Celcius is #{new_temp}"
-  end
-
-  def output(_) do
-    IO.puts "That is not a valid temperature unit. Please try again."
-    go
-  end
-
-  def calculate(temp, "F"), do: (temp - 32) * (5/9) |> Float.round(2)
-  def calculate(temp, "C"), do: (temp * (9/5)) + 32 |> Float.round(2)
 end

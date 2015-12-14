@@ -25,15 +25,19 @@ defmodule InputRetriever do
             end
           end
 
-          def retrieve_string(prompt) do
-            the_string = IO.gets(prompt) |> String.strip
-            case the_string |> String.valid? do
+          def retrieve_string(prompt, list) do
+            the_string = IO.gets(prompt) |> String.strip |> String.upcase
+            case Enum.member?(list, the_string) do
               false ->
                 IO.puts "Please enter a valid string."
-                retrieve_string(prompt)
+                retrieve_string(prompt, list)
                 true ->
                   the_string
                 end
+              end
+
+              def retrieve_string(prompt) do
+                the_string = IO.gets(prompt) |> String.strip |> String.upcase
               end
 
             end
